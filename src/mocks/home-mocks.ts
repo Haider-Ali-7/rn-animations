@@ -12,7 +12,7 @@ export const list = [
   { id: '11', title: 'Eleventh', nav: '/eleventh' },
   { id: '12', title: 'Twelve', nav: '/twelve' },
   { id: '13', title: 'Thirteen', nav: '/thirteen' },
-  { id: '14', title: 'Fourteenth', nav: '/fourteenth' },
+  { id: '14', title: 'Fourteen', nav: '/fourteen' },
   { id: '15', title: 'Fifteenth', nav: '/fifteenth' },
   { id: '16', title: 'Sixteenth', nav: '/sixteenth' },
   { id: '17', title: 'Seventeenth', nav: '/seventeenth' },
