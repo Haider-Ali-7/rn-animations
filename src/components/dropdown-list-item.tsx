@@ -1,9 +1,9 @@
+import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Animated, { SharedValue, useAnimatedStyle, withSpring, withTiming } from 'react-native-reanimated';
 
 import { W_HEIGHT, W_WIDTH } from '@/utils/platforms-utils';
-import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 export type DropdownItemType = {
   label: string;
@@ -23,10 +23,9 @@ const DropdownListItem: React.FC<DropdownItemTypeProps> = ({
   isExpanded,
   dropdownItemCount
 }) => {
-  const isHeader = index === 0;
-
-  const DropdownListItemHeight = 85;
   const Margin = 10;
+  const isHeader = index === 0;
+  const DropdownListItemHeight = 85;
 
   const contentHeight = dropdownItemCount * (DropdownListItemHeight + Margin);
   const verticalCenterOffset = (W_HEIGHT - contentHeight) / 2;

@@ -21,7 +21,12 @@ const Home = () => {
     <View style={styles.container}>
       <Spacer height={verticalScale(10)} />
       <Heading title="React Native Animations" />
-      <LegendList data={list} keyExtractor={(_, ind) => ind.toString()} renderItem={renderItem} />
+      <LegendList
+        estimatedItemSize={40}
+        data={list}
+        keyExtractor={(_, ind) => ind.toString()}
+        renderItem={renderItem}
+      />
     </View>
   );
 };
