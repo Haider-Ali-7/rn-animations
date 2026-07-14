@@ -16,7 +16,7 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({ options, selectedOp
 
   const rActiveStyle = useAnimatedStyle(() => {
     return {
-      left: withSpring(itemWidth * options.indexOf(selectedOption), { velocity: 250, stiffness: 200 })
+      left: withSpring(itemWidth * options.indexOf(selectedOption), { velocity: 50, stiffness: 200 })
     };
   }, [selectedOption]);
 
