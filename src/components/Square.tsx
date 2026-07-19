@@ -50,22 +50,16 @@ const Square: React.FC<SquareProps> = ({ ind, progress }) => {
     };
   });
 
-  return (
-    <Animated.View
-      key={ind}
-      style={[
-        {
-          height: SQUARE_SIZE,
-          aspectRatio: 1,
-          backgroundColor: 'white',
-          position: 'absolute'
-        },
-        rBoxStyle
-      ]}
-    />
-  );
+  return <Animated.View key={ind} style={[styles.container, rBoxStyle]} />;
 };
 
 export default Square;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    height: SQUARE_SIZE,
+    aspectRatio: 1,
+    backgroundColor: 'white',
+    position: 'absolute'
+  }
+});

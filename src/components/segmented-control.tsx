@@ -26,30 +26,14 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({ options, selectedOp
 
   return (
     <View style={[styles.container, { width: segmentedControlWidth, paddingLeft: internalPadding / 2 }]}>
-      <Animated.View
-        style={[
-          {
-            position: 'absolute',
-            width: itemWidth,
-            height: '80%',
-            backgroundColor: palette.backgroundColor,
-            borderRadius: 14,
-            elevation: 3
-          },
-          rActiveStyle
-        ]}
-      />
+      <Animated.View style={[styles.viewContent, { width: itemWidth }, rActiveStyle]} />
       {options.map(el => (
         <Pressable
           key={el}
-          style={{
-            width: itemWidth,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
+          style={[styles.pressable, { width: itemWidth }]}
           hitSlop={40}
           onPress={() => onOptionPress(el)}>
-          <Text style={{ fontSize: 16 }}>{el}</Text>
+          <Text style={styles.text}>{el}</Text>
         </Pressable>
       ))}
     </View>
@@ -66,5 +50,19 @@ const styles = StyleSheet.create({
     backgroundColor: palette.baseGrey05,
     justifyContent: 'space-around',
     borderRadius: 18
+  },
+  text: {
+    fontSize: 16
+  },
+  viewContent: {
+    position: 'absolute',
+    height: '80%',
+    backgroundColor: palette.backgroundColor,
+    borderRadius: 14,
+    elevation: 3
+  },
+  pressable: {
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });

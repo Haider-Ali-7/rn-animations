@@ -24,25 +24,15 @@ const skeletonCommonProps = {
 
 const ContactListItem: React.FC<ContactListItemProps> = ({ contact }) => {
   return (
-    <View style={{ width: '100%', height: 120, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20 }}>
+    <View style={styles.container}>
       <Skeleton show={contact == null ? true : false} height={70} width={70} radius={'round'} {...skeletonCommonProps}>
         {contact && (
-          <Animated.View
-            layout={LinearTransition}
-            entering={FadeIn.duration(1500)}
-            style={{
-              height: 70,
-              aspectRatio: 1,
-              backgroundColor: '#005CB7',
-              borderRadius: 35,
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-            {contact && <Text style={{ fontSize: 25, color: 'white' }}>{contact.name[0]}</Text>}
+          <Animated.View layout={LinearTransition} entering={FadeIn.duration(1500)} style={styles.skeletonContent}>
+            {contact && <Text style={styles.title}>{contact.name[0]}</Text>}
           </Animated.View>
         )}
       </Skeleton>
-      <View style={{ marginLeft: 15, flexShrink: 1 }}>
+      <View style={styles.viewContent}>
         <Skeleton
           show={contact == null ? true : false}
           height={30}
@@ -50,7 +40,7 @@ const ContactListItem: React.FC<ContactListItemProps> = ({ contact }) => {
           radius={'round'}
           {...skeletonCommonProps}>
           {contact && (
-            <Animated.Text layout={LinearTransition} entering={FadeIn.duration(1500)} style={{ fontSize: 25 }}>
+            <Animated.Text layout={LinearTransition} entering={FadeIn.duration(1500)} style={styles.text}>
               {contact.name}
             </Animated.Text>
           )}
@@ -63,7 +53,7 @@ const ContactListItem: React.FC<ContactListItemProps> = ({ contact }) => {
           radius={'round'}
           {...skeletonCommonProps}>
           {contact && (
-            <Animated.Text layout={LinearTransition} entering={FadeIn.duration(1500)} style={{ fontSize: 20 }}>
+            <Animated.Text layout={LinearTransition} entering={FadeIn.duration(1500)} style={styles.skeletonText}>
               {contact.email}
             </Animated.Text>
           )}
@@ -75,4 +65,34 @@ const ContactListItem: React.FC<ContactListItemProps> = ({ contact }) => {
 
 export default ContactListItem;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: 120,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20
+  },
+  skeletonContent: {
+    height: 70,
+    aspectRatio: 1,
+    backgroundColor: '#005CB7',
+    borderRadius: 35,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  title: {
+    fontSize: 25,
+    color: 'white'
+  },
+  viewContent: {
+    marginLeft: 15,
+    flexShrink: 1
+  },
+  text: {
+    fontSize: 25
+  },
+  skeletonText: {
+    fontSize: 20
+  }
+});

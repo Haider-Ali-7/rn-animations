@@ -16,8 +16,8 @@ const CircleCarousel: React.FC<CircleCarouselProps> = ({ data }) => {
 
   return (
     <Animated.FlatList
-      style={{ position: 'absolute', bottom: 0, height: 300 }}
-      contentContainerStyle={{ justifyContent: 'center', alignItems: 'center', paddingRight: 200 }}
+      style={styles.list}
+      contentContainerStyle={styles.contentContainer}
       pagingEnabled
       snapToInterval={ListItemWidth}
       horizontal
@@ -35,4 +35,15 @@ const CircleCarousel: React.FC<CircleCarouselProps> = ({ data }) => {
 
 export default CircleCarousel;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  list: {
+    position: 'absolute',
+    bottom: 0,
+    height: 300
+  },
+  contentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 200
+  }
+});

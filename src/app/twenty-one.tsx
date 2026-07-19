@@ -60,11 +60,9 @@ const TwentyOne = () => {
 
   return (
     <View style={styles.container}>
-      <Animated.Text style={[{ fontSize: 90, color: '#000', fontWeight: 'bold' }, rShakeStyle, rErrorStyle]}>
-        {count}
-      </Animated.Text>
+      <Animated.Text style={[styles.heading, rShakeStyle, rErrorStyle]}>{count}</Animated.Text>
 
-      <View style={{ flexDirection: 'row', position: 'absolute', bottom: 48, right: 48, gap: 20 }}>
+      <View style={styles.viewContent}>
         <TouchableOpacity style={styles.btn} onPress={onDecreament}>
           <Text style={styles.btnTitle}>-</Text>
         </TouchableOpacity>
@@ -97,5 +95,17 @@ const styles = StyleSheet.create({
   btnTitle: {
     fontSize: 50,
     color: '#fff'
+  },
+  heading: {
+    fontSize: 90,
+    color: '#000',
+    fontWeight: 'bold'
+  },
+  viewContent: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 48,
+    right: 48,
+    gap: 20
   }
 });

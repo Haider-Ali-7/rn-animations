@@ -53,7 +53,7 @@ const Twelve = () => {
   return (
     <View style={styles.container}>
       <GestureDetector gesture={onPan}>
-        <Animated.View style={[{ flex: 1, backgroundColor: 'white', padding: 20 }, rViewStyle]}>
+        <Animated.View style={[styles.gestureDetectorContent, rViewStyle]}>
           <Feather name="menu" size={32} color={'black'} onPress={onMenuPress} />
         </Animated.View>
       </GestureDetector>
@@ -68,5 +68,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#444',
     justifyContent: 'center'
+  },
+  gestureDetectorContent: {
+    flex: 1,
+    backgroundColor: 'white',
+    padding: 20
   }
 });
