@@ -20,7 +20,7 @@ export const list = [
   { id: '19', title: 'Nineteen', nav: '/nineteen' },
   { id: '20', title: 'Twenty', nav: '/twenty' },
   { id: '21', title: 'Twenty One', nav: '/twenty-one' },
-  { id: '22', title: 'Twenty Two', nav: '/twentytwo' },
+  { id: '22', title: 'Twenty Two', nav: '/twenty-two' },
   { id: '23', title: 'Twenty Three', nav: '/twentythree' },
   { id: '24', title: 'Twenty Four', nav: '/twentyfour' },
   { id: '25', title: 'Twenty Five', nav: '/twentyfive' },
