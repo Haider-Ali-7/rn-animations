@@ -28,5 +28,8 @@ export const Colors = {
 export const palette = {
   baseGrey05: '#e5e2dc',
   baseGrey80: '#30302e',
-  backgroundColor: '#f1eee8'
+  backgroundColor: '#f1eee8',
+  card: '#302e37',
+  highlight: '#EA3f4c',
+  backgroundColor1: '#18141d'
 };

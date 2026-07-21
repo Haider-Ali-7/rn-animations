@@ -52,7 +52,7 @@ const Ripple: React.FC<RippleProps> = ({ style, onTap, children }) => {
   return (
     <View>
       <GestureDetector gesture={onTapGesture}>
-        <Animated.View style={[styles.ripple, { overflow: 'hidden' }]}>
+        <Animated.View style={styles.ripple}>
           <View style={styles.ripple}>{children}</View>
           <Animated.View style={rCircleStyle} />
         </Animated.View>
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     elevation: 5,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    overflow: 'hidden'
   }
 });

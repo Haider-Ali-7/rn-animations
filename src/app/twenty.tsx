@@ -1,7 +1,8 @@
-import SegmentedControl from '@/components/segmented-control';
 import { palette } from '@/constants/Colors';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+
+import SegmentedControl from '@/components/segmented-control';
 
 const options = ['Light', 'Standard', 'Pro'];
 

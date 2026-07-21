@@ -55,14 +55,8 @@ const DropdownListItem: React.FC<DropdownItemTypeProps> = ({
         if (isHeader) isExpanded.value = !isExpanded.value;
       }}
       style={[
-        {
-          zIndex: dropdownItemCount - index,
-          position: 'absolute',
-          width: W_WIDTH * 0.95,
-          height: DropdownListItemHeight,
-          backgroundColor: '#1b1b1b',
-          borderRadius: 10
-        },
+        styles.roundedFilledAbsolute,
+        { zIndex: dropdownItemCount - index, width: W_WIDTH * 0.95, height: DropdownListItemHeight },
         rViewStyle
       ]}>
       <View style={styles.container}>
@@ -70,7 +64,7 @@ const DropdownListItem: React.FC<DropdownItemTypeProps> = ({
           <AntDesign name={iconName} color={'#d4d4d4'} size={25} />
         </View>
         <Text style={styles.label}>{label}</Text>
-        <Animated.View style={[styles.iconContainer, { backgroundColor: 'transparent' }, isHeader && rIconStyle]}>
+        <Animated.View style={[styles.iconContainer, isHeader && rIconStyle]}>
           <MaterialIcons name={'arrow-forward-ios'} color={'#d4d4d4'} size={25} />
         </Animated.View>
       </View>
@@ -102,5 +96,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  roundedFilledAbsolute: {
+    position: 'absolute',
+    backgroundColor: '#1b1b1b',
+    borderRadius: 10
   }
 });

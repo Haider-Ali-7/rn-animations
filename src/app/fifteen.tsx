@@ -30,10 +30,10 @@ const Fifteen = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.floatingBtn} onPress={onAdd}>
-        <Text style={{ color: 'white', fontSize: 40 }}>+</Text>
+        <Text style={styles.heading}>+</Text>
       </TouchableOpacity>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingVertical: 50 }}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={{ paddingVertical: 50 }}>
         {items.map((el, index) => (
           <Animated.View
             key={el.id}
@@ -76,5 +76,12 @@ const styles = StyleSheet.create({
     zIndex: 10,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  heading: {
+    color: 'white',
+    fontSize: 40
+  },
+  scrollView: {
+    flex: 1
   }
 });

@@ -28,7 +28,7 @@ const Nineteen = () => {
         keyExtractor={(_, index) => index.toString()}
         data={contacts ?? Array(6).fill(undefined)}
         estimatedItemSize={120}
-        ItemSeparatorComponent={() => <View style={{ height: 1, width: '100%', backgroundColor: '#ced0ce' }} />}
+        ItemSeparatorComponent={() => <View style={styles.legendListContent} />}
         renderItem={({ item }) => <ContactListItem contact={item} />}
       />
     </View>
@@ -41,5 +41,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff'
+  },
+  legendListContent: {
+    height: 1,
+    width: '100%',
+    backgroundColor: '#ced0ce'
   }
 });

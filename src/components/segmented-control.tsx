@@ -11,42 +11,29 @@ interface SegmentedControlProps {
 }
 
 const SegmentedControl: React.FC<SegmentedControlProps> = ({ options, selectedOption, onOptionPress }) => {
-  const segmentedControlWidth = W_WIDTH * 0.9;
-  const itemWidth = segmentedControlWidth / options.length;
+  const internalPadding = 10;
+  const segmentedControlWidth = W_WIDTH - 40;
+  const itemWidth = (segmentedControlWidth - internalPadding) / options.length;
 
   const rActiveStyle = useAnimatedStyle(() => {
     return {
-      left: withSpring(itemWidth * options.indexOf(selectedOption), { velocity: 50, stiffness: 200 })
+      left: withSpring(itemWidth * options.indexOf(selectedOption) + internalPadding / 2, {
+        velocity: 50,
+        stiffness: 200
+      })
     };
   }, [selectedOption]);
 
   return (
-    <View style={[styles.container, { width: segmentedControlWidth }]}>
-      <Animated.View
-        style={[
-          {
-            position: 'absolute',
-            width: itemWidth,
-            height: '80%',
-            backgroundColor: palette.backgroundColor,
-            borderRadius: 14,
-            elevation: 3,
-            zIndex: 0
-          },
-          rActiveStyle
-        ]}
-      />
+    <View style={[styles.container, { width: segmentedControlWidth, paddingLeft: internalPadding / 2 }]}>
+      <Animated.View style={[styles.viewContent, { width: itemWidth }, rActiveStyle]} />
       {options.map(el => (
         <Pressable
           key={el}
-          style={{
-            width: itemWidth,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
+          style={[styles.pressable, { width: itemWidth }]}
           hitSlop={40}
           onPress={() => onOptionPress(el)}>
-          <Text style={{ fontSize: 16 }}>{el}</Text>
+          <Text style={styles.text}>{el}</Text>
         </Pressable>
       ))}
     </View>
@@ -63,5 +50,19 @@ const styles = StyleSheet.create({
     backgroundColor: palette.baseGrey05,
     justifyContent: 'space-around',
     borderRadius: 18
+  },
+  text: {
+    fontSize: 16
+  },
+  viewContent: {
+    position: 'absolute',
+    height: '80%',
+    backgroundColor: palette.backgroundColor,
+    borderRadius: 14,
+    elevation: 3
+  },
+  pressable: {
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
