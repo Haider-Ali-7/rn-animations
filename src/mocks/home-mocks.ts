@@ -23,7 +23,7 @@ export const list = [
   { id: '22', title: 'Twenty Two', nav: '/twenty-two' },
   { id: '23', title: 'Twenty Three', nav: '/twenty-three' },
   { id: '24', title: 'Twenty Four', nav: '/twenty-four' },
-  { id: '25', title: 'Twenty Five', nav: '/twentyfive' },
+  { id: '25', title: 'Twenty Five', nav: '/twenty-five' },
   { id: '26', title: 'Twenty Six', nav: '/twentysix' },
   { id: '27', title: 'Twenty Seven', nav: '/twentyseven' }
 ];
