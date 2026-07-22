@@ -39,7 +39,7 @@ const Dots: React.FC<DotsProps> = ({ count, activeIndex }) => {
       />
 
       {new Array(count).fill(0).map((_, index) => {
-        return <Dot key={index} index={index} activeIndex={activeIndex} />;
+        return <Dot key={index} index={index} activeIndex={activeIndex} size={DOTS_SIZE} />;
       })}
     </View>
   );
