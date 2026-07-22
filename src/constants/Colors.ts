@@ -34,5 +34,6 @@ export const palette = {
   backgroundColor1: '#18141d',
   active: '#ef8e52',
   inactive: '#b3b1b4',
-  backgroundColor2: '#2d3045'
+  backgroundColor2: '#2d3045',
+  active1: '#66e070'
 };
