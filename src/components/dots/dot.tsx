@@ -1,15 +1,13 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import Animated, { SharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
-
-import { DOTS_SIZE } from '.';
 
 interface DotProps {
   index: number;
+  size: number;
   activeIndex: SharedValue<number>;
 }
 
-const Dot: React.FC<DotProps> = ({ index, activeIndex }) => {
+const Dot: React.FC<DotProps> = ({ index, size, activeIndex }) => {
   const rDotStyle = useAnimatedStyle(() => {
     const isDotActive = index <= activeIndex.value;
     return {
@@ -17,11 +15,11 @@ const Dot: React.FC<DotProps> = ({ index, activeIndex }) => {
     };
   }, []);
 
-  return <Animated.View style={[styles.dot, rDotStyle]} />;
+  return (
+    <Animated.View
+      style={[{ width: size, height: size, backgroundColor: '#fff', borderRadius: size / 2 }, rDotStyle]}
+    />
+  );
 };
 
 export default Dot;
-
-const styles = StyleSheet.create({
-  dot: { width: DOTS_SIZE, height: DOTS_SIZE, backgroundColor: '#fff', borderRadius: DOTS_SIZE / 2 }
-});
